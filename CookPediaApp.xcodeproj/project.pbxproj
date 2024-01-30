@@ -9,23 +9,28 @@
 /* Begin PBXBuildFile section */
 		A1931D122B68F583004F17C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D112B68F583004F17C2 /* AppDelegate.swift */; };
 		A1931D142B68F583004F17C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D132B68F583004F17C2 /* SceneDelegate.swift */; };
-		A1931D162B68F583004F17C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D152B68F583004F17C2 /* ViewController.swift */; };
-		A1931D192B68F583004F17C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1931D172B68F583004F17C2 /* Main.storyboard */; };
 		A1931D1C2B68F583004F17C2 /* CookPediaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1931D1A2B68F583004F17C2 /* CookPediaApp.xcdatamodeld */; };
 		A1931D1E2B68F585004F17C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1931D1D2B68F585004F17C2 /* Assets.xcassets */; };
 		A1931D212B68F585004F17C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1931D1F2B68F585004F17C2 /* LaunchScreen.storyboard */; };
+		A1931D2E2B697661004F17C2 /* MakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D2D2B697661004F17C2 /* MakerView.swift */; };
+		A1931D302B69766D004F17C2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D2F2B69766D004F17C2 /* UIColor.swift */; };
+		A1931D332B6976ED004F17C2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A1931D322B6976ED004F17C2 /* SnapKit */; };
+		A1931D352B69775D004F17C2 /* NewPwdPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D342B69775D004F17C2 /* NewPwdPageController.swift */; };
+		A1931D372B6978F3004F17C2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D362B6978F3004F17C2 /* NotificationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A1931D0E2B68F583004F17C2 /* CookPediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookPediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1931D112B68F583004F17C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1931D132B68F583004F17C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A1931D152B68F583004F17C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A1931D182B68F583004F17C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1931D1B2B68F583004F17C2 /* CookPediaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CookPediaApp.xcdatamodel; sourceTree = "<group>"; };
 		A1931D1D2B68F585004F17C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1931D202B68F585004F17C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1931D222B68F585004F17C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1931D2D2B697661004F17C2 /* MakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerView.swift; sourceTree = "<group>"; };
+		A1931D2F2B69766D004F17C2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A1931D342B69775D004F17C2 /* NewPwdPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPwdPageController.swift; sourceTree = "<group>"; };
+		A1931D362B6978F3004F17C2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1931D332B6976ED004F17C2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +64,58 @@
 		A1931D102B68F583004F17C2 /* CookPediaApp */ = {
 			isa = PBXGroup;
 			children = (
-				A1931D112B68F583004F17C2 /* AppDelegate.swift */,
-				A1931D132B68F583004F17C2 /* SceneDelegate.swift */,
-				A1931D152B68F583004F17C2 /* ViewController.swift */,
-				A1931D172B68F583004F17C2 /* Main.storyboard */,
-				A1931D1D2B68F585004F17C2 /* Assets.xcassets */,
-				A1931D1F2B68F585004F17C2 /* LaunchScreen.storyboard */,
+				A1931D2B2B6975B7004F17C2 /* extensions */,
+				A1931D2A2B6975A1004F17C2 /* helper */,
+				A1931D292B697594004F17C2 /* delegate */,
+				A1931D282B697565004F17C2 /* common */,
+				A1931D2C2B6975C3004F17C2 /* resources */,
 				A1931D222B68F585004F17C2 /* Info.plist */,
 				A1931D1A2B68F583004F17C2 /* CookPediaApp.xcdatamodeld */,
 			);
 			path = CookPediaApp;
+			sourceTree = "<group>";
+		};
+		A1931D282B697565004F17C2 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				A1931D342B69775D004F17C2 /* NewPwdPageController.swift */,
+				A1931D362B6978F3004F17C2 /* NotificationController.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		A1931D292B697594004F17C2 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A1931D112B68F583004F17C2 /* AppDelegate.swift */,
+				A1931D132B68F583004F17C2 /* SceneDelegate.swift */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		A1931D2A2B6975A1004F17C2 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				A1931D2D2B697661004F17C2 /* MakerView.swift */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+		A1931D2B2B6975B7004F17C2 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1931D2F2B69766D004F17C2 /* UIColor.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		A1931D2C2B6975C3004F17C2 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1931D1D2B68F585004F17C2 /* Assets.xcassets */,
+				A1931D1F2B68F585004F17C2 /* LaunchScreen.storyboard */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +134,9 @@
 			dependencies = (
 			);
 			name = CookPediaApp;
+			packageProductDependencies = (
+				A1931D322B6976ED004F17C2 /* SnapKit */,
+			);
 			productName = CookPediaApp;
 			productReference = A1931D0E2B68F583004F17C2 /* CookPediaApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +165,9 @@
 				Base,
 			);
 			mainGroup = A1931D052B68F583004F17C2;
+			packageReferences = (
+				A1931D312B6976ED004F17C2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = A1931D0F2B68F583004F17C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,7 +184,6 @@
 			files = (
 				A1931D212B68F585004F17C2 /* LaunchScreen.storyboard in Resources */,
 				A1931D1E2B68F585004F17C2 /* Assets.xcassets in Resources */,
-				A1931D192B68F583004F17C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1931D162B68F583004F17C2 /* ViewController.swift in Sources */,
+				A1931D2E2B697661004F17C2 /* MakerView.swift in Sources */,
+				A1931D302B69766D004F17C2 /* UIColor.swift in Sources */,
 				A1931D1C2B68F583004F17C2 /* CookPediaApp.xcdatamodeld in Sources */,
+				A1931D372B6978F3004F17C2 /* NotificationController.swift in Sources */,
+				A1931D352B69775D004F17C2 /* NewPwdPageController.swift in Sources */,
 				A1931D122B68F583004F17C2 /* AppDelegate.swift in Sources */,
 				A1931D142B68F583004F17C2 /* SceneDelegate.swift in Sources */,
 			);
@@ -151,14 +207,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A1931D172B68F583004F17C2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A1931D182B68F583004F17C2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A1931D1F2B68F585004F17C2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -301,7 +349,6 @@
 				INFOPLIST_FILE = CookPediaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -329,7 +376,6 @@
 				INFOPLIST_FILE = CookPediaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -367,6 +413,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A1931D312B6976ED004F17C2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1931D322B6976ED004F17C2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1931D312B6976ED004F17C2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A1931D1A2B68F583004F17C2 /* CookPediaApp.xcdatamodeld */ = {
