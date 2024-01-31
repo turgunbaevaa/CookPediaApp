@@ -23,13 +23,13 @@ class NewPwdPageController: UIViewController {
     
     private lazy var pwdTFLabel = MakerView.shared.makeLabel(text: "Password", textColor: .black, textSize: 16, textWeight: .bold)
     
-    private lazy var pwdTF = MakerView.shared.makeTextField(leftViewMode: .always)
+    private lazy var pwdTF = MakerView.shared.makeTextField(leftViewMode: .always, rightViewTarget: self, rightViewAction: #selector(togglePasswordVisibility(_:)), isSecureTextEntry: true)
     
     private lazy var pwdTFViewLine = MakerView.shared.makeView(backgroundColor: .red)
     
     private lazy var confirmPwdTFLabel = MakerView.shared.makeLabel(text: "Confirm Password", textColor: .black, textSize: 16, textWeight: .bold)
     
-    private lazy var confirmPwdTF = MakerView.shared.makeTextField(leftViewMode: .always)
+    private lazy var confirmPwdTF = MakerView.shared.makeTextField(leftViewMode: .always, rightViewTarget: self, rightViewAction: #selector(toggleConfirmPasswordVisibility(_:)), isSecureTextEntry: true)
     
     private lazy var confirmPwdTFViewLine = MakerView.shared.makeView(backgroundColor: .red)
     
@@ -175,7 +175,7 @@ class NewPwdPageController: UIViewController {
         view.addSubview(checkBoxTitle)
         checkBoxTitle.snp.makeConstraints { make in
             make.top.equalTo(confirmPwdTFViewLine.snp.bottom).offset(24)
-            make.leading.equalTo(checkBoxButton.snp.trailing).offset(16)
+            make.leading.equalTo(checkBoxButton.snp.trailing).offset(10)
             make.centerY.equalTo(checkBoxButton.snp.centerY)
         }
     }
@@ -263,6 +263,23 @@ class NewPwdPageController: UIViewController {
         updateContinueButtonActivity()
         return true
     }
+    
+    @objc private func togglePasswordVisibility(_ sender: UIButton) {
+        if sender.tag == 0 {
+            pwdTF.isSecureTextEntry = !pwdTF.isSecureTextEntry
+            let imageName = pwdTF.isSecureTextEntry ? "eye.slash" : "eye"
+            sender.setBackgroundImage(UIImage(systemName: imageName), for: .normal)
+        }
+    }
+    
+    @objc private func toggleConfirmPasswordVisibility(_ sender: UIButton) {
+        if sender.tag == 0 {
+            confirmPwdTF.isSecureTextEntry = !confirmPwdTF.isSecureTextEntry
+            let imageName = confirmPwdTF.isSecureTextEntry ? "eye.slash" : "eye"
+            sender.setBackgroundImage(UIImage(systemName: imageName), for: .normal)
+        }
+    }
+    
 }
 
 extension NewPwdPageController: UITextFieldDelegate {

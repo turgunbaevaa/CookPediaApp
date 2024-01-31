@@ -33,19 +33,38 @@ class MakerView: UIViewController, UITextFieldDelegate{
                        textColor: UIColor = .black,
                        keyboardType: UIKeyboardType = .default,
                        leftViewMode: UITextField.ViewMode,
-                       cornerRadius: CGFloat = 2) -> UITextField{
+                       rightViewTarget: Any? = nil,
+                       rightViewAction: Selector? = nil,
+                       cornerRadius: CGFloat = 2,
+                       isSecureTextEntry: Bool = false) -> UITextField {
+        
         let tf = UITextField()
         tf.placeholder = placeholder
         tf.attributedPlaceholder = NSAttributedString(string: placeholder,
-                                                          attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: placeholderFontSize)])
+                                                      attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: placeholderFontSize)])
         tf.textColor = textColor
         tf.keyboardType = keyboardType
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 3))
-        tf.leftView = view
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 3))
+        tf.leftView = leftView
         tf.leftViewMode = leftViewMode
+        
+        if let target = rightViewTarget, let action = rightViewAction {
+            let rightView = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+            rightView.setBackgroundImage(UIImage(systemName: "eye.slash"), for: .normal)
+            rightView.isUserInteractionEnabled = true
+            rightView.addTarget(target, action: action, for: .touchUpInside)
+            tf.rightView = rightView
+            tf.rightViewMode = .always
+        }
+        
         tf.layer.cornerRadius = cornerRadius
+        tf.isSecureTextEntry = isSecureTextEntry
+        tf.tintColor = .black
         return tf
     }
+    
+    
+    
     
     func makeImage (image: UIImage? = nil,
                     cornerRadius: CGFloat,
@@ -67,14 +86,12 @@ class MakerView: UIViewController, UITextFieldDelegate{
                     backgroundColor: UIColor,
                     titleColor: UIColor?,
                     cornerRadius: CGFloat,
-                    //action: (Selector, UIViewController),
                     font: UIFont) -> UIButton {
         let button = UIButton()
         button.setTitle(title, for: .normal)
         button.backgroundColor = backgroundColor
         button.setTitleColor(titleColor, for: .normal)
         button.layer.cornerRadius = cornerRadius
-        //button.addTarget(action.1, action: action.0, for: .touchUpInside)
         button.titleLabel?.font = font
         return button
     }
@@ -102,26 +119,4 @@ class MakerView: UIViewController, UITextFieldDelegate{
         return button
     }
     
-    func makeCodeResetTF(placeholder: String = "Enter your mobile number or email",
-                       placeholderFontSize: CGFloat = 13.0,
-                       textColor: UIColor = .black,
-                       keyboardType: UIKeyboardType = .default,
-                       leftViewMode: UITextField.ViewMode,
-                         cornerRadius: CGFloat = 5, backgroundColor: UIColor, borderColor: CGColor) -> UITextField{
-        let tf = UITextField()
-        tf.placeholder = placeholder
-        tf.attributedPlaceholder = NSAttributedString(string: placeholder,
-                                                      attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: placeholderFontSize)])
-        tf.textColor = textColor
-        tf.keyboardType = keyboardType
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 3))
-        tf.leftView = view
-        tf.leftViewMode = leftViewMode
-        tf.layer.cornerRadius = cornerRadius
-        tf.backgroundColor = backgroundColor
-        tf.layer.borderColor = borderColor
-        tf.layer.borderWidth = 1.0
-        tf.isEnabled = false
-        return tf
-    }
 }
