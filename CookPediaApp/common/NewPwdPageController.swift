@@ -119,6 +119,8 @@ class NewPwdPageController: UIViewController {
             make.leading.equalTo(view.snp.leading).offset(24)
             make.trailing.equalTo(view.snp.trailing).offset(-24)
         }
+        pwdTF.delegate = self
+        pwdTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func setupPwdTFViewLine(){
@@ -146,6 +148,8 @@ class NewPwdPageController: UIViewController {
             make.leading.equalTo(view.snp.leading).offset(24)
             make.trailing.equalTo(view.snp.trailing).offset(-24)
         }
+        confirmPwdTF.delegate = self
+        confirmPwdTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func setupConfirmPwdTFViewLine(){
@@ -185,10 +189,24 @@ class NewPwdPageController: UIViewController {
             make.height.equalTo(58)
         }
         continueButton.addTarget(self, action: #selector(continueButtonTapped(_:)), for: .touchUpInside)
+        continueButton.isEnabled = false
+        continueButton.backgroundColor = .lightGray
+        updateContinueButtonActivity()
     }
     
     @objc private func continueButtonTapped(_ sender: UIButton) {
-        check()
+        if pwdTF.text == confirmPwdTF.text {
+            check()
+        } else {
+            confirmPwdTFLabel.text = "Passwords do not match"
+            confirmPwdTFLabel.textColor = .red
+            confirmPwdTF.layer.borderWidth = 1
+            confirmPwdTF.layer.borderColor = UIColor.red.cgColor
+        }
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        updateContinueButtonActivity()
     }
     
     @objc private func checkBoxTapped() {
@@ -200,28 +218,57 @@ class NewPwdPageController: UIViewController {
         checkField(text: pwdTF.text, title: pwdTFLabel, textField: pwdTF)
         checkField(text: confirmPwdTF.text, title: confirmPwdTFLabel, textField: confirmPwdTF)
         
-        if pwdTF.text?.count ?? 0 >= 4, confirmPwdTF.text?.count ?? 0 >= 4 {
+        updateContinueButtonActivity()
+        
+        if pwdTF.text == confirmPwdTF.text, pwdTF.text?.count ?? 0 >= 4 {
             let vc = NotificationController()
             navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    func checkField(text: String?, title: UILabel, textField: UITextField) {
-        if text?.count ?? 0 < 6 {
-            title.text = "Please, fill the field"
-            title.textColor = .red
-            textField.layer.borderWidth = 1
-            textField.layer.borderColor = UIColor.red.cgColor
-        } else {
+    func checkField(text: String?, title: UILabel, textField: UITextField, minLength: Int = 6) {
+        if let text = text, text.count >= minLength {
             title.text = (textField == pwdTF) ? "Password" : "Confirm Password"
             title.textColor = .init(hex: "#A5A5A5")
             textField.layer.borderColor = UIColor.white.cgColor
             textField.layer.borderWidth = 1
+        } else {
+            title.text = "Please, fill the field"
+            title.textColor = .red
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.red.cgColor
         }
     }
     
     @objc private func exitButtonTapped(_ sender: UIButton) {
         
     }
+    
+    private func updateContinueButtonActivity() {
+        guard let pwdText = pwdTF.text, let confirmPwdText = confirmPwdTF.text else {
+            continueButton.isEnabled = false
+            continueButton.backgroundColor = .lightGray
+            return
+        }
+        
+        let isPasswordValid = pwdText.count >= 4
+        let arePasswordsEqual = pwdText == confirmPwdText
+        
+        continueButton.isEnabled = isPasswordValid && arePasswordsEqual
+        continueButton.backgroundColor = isPasswordValid && arePasswordsEqual ? .init(hex: "#F5484A") : .lightGray
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        updateContinueButtonActivity()
+        return true
+    }
+}
 
+extension NewPwdPageController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Этот метод вызывается при изменении текста в поле ввода
+        updateContinueButtonActivity()
+        return true
+    }
 }
