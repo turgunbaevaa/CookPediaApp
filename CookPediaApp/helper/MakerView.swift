@@ -36,7 +36,7 @@ class MakerView: UIViewController, UITextFieldDelegate{
                        rightViewTarget: Any? = nil,
                        rightViewAction: Selector? = nil,
                        cornerRadius: CGFloat = 2,
-                       isSecureTextEntry: Bool = false) -> UITextField {
+                       isSecureTextEntry: Bool = false, tag: Int = 0) -> UITextField {
         
         let tf = UITextField()
         tf.placeholder = placeholder
@@ -60,11 +60,9 @@ class MakerView: UIViewController, UITextFieldDelegate{
         tf.layer.cornerRadius = cornerRadius
         tf.isSecureTextEntry = isSecureTextEntry
         tf.tintColor = .black
+        tf.tag = tag
         return tf
     }
-    
-    
-    
     
     func makeImage (image: UIImage? = nil,
                     cornerRadius: CGFloat,
@@ -73,6 +71,7 @@ class MakerView: UIViewController, UITextFieldDelegate{
         img.layer.cornerRadius = cornerRadius
         img.image = image
         img.contentMode = contentMode
+        img.clipsToBounds = true
         return img
     }
     
@@ -104,19 +103,12 @@ class MakerView: UIViewController, UITextFieldDelegate{
         return stackView
     }
     
-    func makeCodeButton(backgroundColor: UIColor = .white,
-                        titleColor: UIColor? = .black,
-                        cornerRadius: CGFloat,
-                        borderWidth: CGFloat = 1,
-                        borderColor: CGColor = UIColor.black.cgColor) -> UIButton {
+    func makeBackButton(backgroundColor: UIColor = .white, image: UIImage?) -> UIButton {
         let button = UIButton()
         button.backgroundColor = backgroundColor
-        button.setTitle("X", for: .normal)
-        button.setTitleColor(titleColor, for: .normal)
-        button.layer.cornerRadius = cornerRadius
-        button.layer.borderWidth = borderWidth
-        button.layer.borderColor = borderColor
+        button.setImage(image, for: .normal)
         return button
     }
+
     
 }

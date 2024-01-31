@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A141C5A92B6AD2460058C213 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141C5A82B6AD2460058C213 /* NotificationList.swift */; };
+		A141C5AB2B6AD4040058C213 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141C5AA2B6AD4040058C213 /* CustomTableViewCell.swift */; };
 		A1931D122B68F583004F17C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D112B68F583004F17C2 /* AppDelegate.swift */; };
 		A1931D142B68F583004F17C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1931D132B68F583004F17C2 /* SceneDelegate.swift */; };
 		A1931D1C2B68F583004F17C2 /* CookPediaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1931D1A2B68F583004F17C2 /* CookPediaApp.xcdatamodeld */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A141C5A82B6AD2460058C213 /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
+		A141C5AA2B6AD4040058C213 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		A1931D0E2B68F583004F17C2 /* CookPediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookPediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1931D112B68F583004F17C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1931D132B68F583004F17C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A141C5A72B6AD2280058C213 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A141C5A82B6AD2460058C213 /* NotificationList.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		A1931D052B68F583004F17C2 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +76,7 @@
 		A1931D102B68F583004F17C2 /* CookPediaApp */ = {
 			isa = PBXGroup;
 			children = (
+				A141C5A72B6AD2280058C213 /* model */,
 				A1931D2B2B6975B7004F17C2 /* extensions */,
 				A1931D2A2B6975A1004F17C2 /* helper */,
 				A1931D292B697594004F17C2 /* delegate */,
@@ -97,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A1931D2D2B697661004F17C2 /* MakerView.swift */,
+				A141C5AA2B6AD4040058C213 /* CustomTableViewCell.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -194,10 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A141C5AB2B6AD4040058C213 /* CustomTableViewCell.swift in Sources */,
 				A1931D2E2B697661004F17C2 /* MakerView.swift in Sources */,
 				A1931D302B69766D004F17C2 /* UIColor.swift in Sources */,
 				A1931D1C2B68F583004F17C2 /* CookPediaApp.xcdatamodeld in Sources */,
 				A1931D372B6978F3004F17C2 /* NotificationController.swift in Sources */,
+				A141C5A92B6AD2460058C213 /* NotificationList.swift in Sources */,
 				A1931D352B69775D004F17C2 /* NewPwdPageController.swift in Sources */,
 				A1931D122B68F583004F17C2 /* AppDelegate.swift in Sources */,
 				A1931D142B68F583004F17C2 /* SceneDelegate.swift in Sources */,
